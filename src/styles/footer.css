@@ -1,0 +1,26 @@
+.social__container {
+  position: fixed;
+  bottom: 2%;
+  left: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.social__container p {
+  font-size: 1rem;
+}
+
+.social__item {
+  font-weight: bold;
+  color: var(--dark-background);
+  text-decoration: none;
+  transition: color 250ms linear;
+  padding-right: 2rem;
+}
+
+.social__item:hover {
+  font-weight: bold;
+  color: var(--primary-text);
+  text-decoration: none;
+  transition: color 250ms linear;
+}

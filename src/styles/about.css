@@ -1,0 +1,160 @@
+.icon__down {
+  margin-top: 2rem;
+  width: 30px;
+  padding-left: 2.5vw;
+}
+
+.content__images {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.image-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 750ms;
+  top: 0%;
+  left: 25%;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.image-rotate-left {
+  transform: rotate(0);
+}
+
+.image-rotate-left {
+  transform: rotate(5deg);
+  transform-origin: top left;
+  /* transition: 500ms all ease; */
+}
+
+.image-rotate-right {
+  transform: rotate(-5deg);
+  transform-origin: top right;
+  /* transition: 500ms all ease; */
+}
+
+.image-item__background {
+  padding: 20px;
+  vertical-align: middle;
+  position: absolute;
+  border-radius: 0px;
+  background: var(--primary-text);
+  box-shadow: 5px 5px 20px #97c4c6, -5px -5px 20px #b9f0f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image--react-logo {
+  width: 20vw;
+}
+
+.icecream .image {
+  width: 15vw;
+}
+
+.canvas.image-item__background {
+  left: 50%;
+}
+
+.icecream.image-item__background {
+  left: 25%;
+}
+
+.canvas .image {
+  width: 15vw;
+}
+
+.smiley-face .image {
+  width: 20vw;
+}
+
+.pmp-badge .image {
+  width: 20vw;
+}
+
+.simpsons-football .image {
+  width: 20vw;
+}
+
+.premier-league .image {
+  width: 20vw;
+}
+
+.starcraft .image {
+  width: 20vw;
+}
+
+.simpsons-football.image-item__background {
+  left: 35%;
+  top: 10%;
+}
+.premier-league.image-item__background {
+  left: 45%;
+  top: 40%;
+}
+.starcraft.image-item__background {
+  left: 40%;
+  top: 60%;
+}
+
+.step {
+  margin-bottom: 60vh;
+}
+
+.content__text {
+  position: relative;
+}
+
+.step .content__paragraph {
+  font-size: 5rem;
+  font-weight: 100;
+  margin: 1rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .spin-logo {
+    animation: spin infinite 6s ease-in-out;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .float-logo {
+    animation: float infinite 4s ease-in-out;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

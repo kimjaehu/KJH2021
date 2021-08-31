@@ -1,0 +1,23 @@
+.mouse-pointer {
+  z-index: 999;
+  pointer-events: none;
+  position: absolute;
+  --b: 3px; /* thickness of the border */
+  --c: var(--secondary-text); /* color of the border */
+  --w: 10px; /* width of border */
+
+  border: var(--b) solid transparent; /* space for the border */
+  background: linear-gradient(var(--c), var(--c)) top left,
+    linear-gradient(var(--c), var(--c)) top left,
+    linear-gradient(var(--c), var(--c)) bottom left,
+    linear-gradient(var(--c), var(--c)) bottom left,
+    linear-gradient(var(--c), var(--c)) top right,
+    linear-gradient(var(--c), var(--c)) top right,
+    linear-gradient(var(--c), var(--c)) bottom right,
+    linear-gradient(var(--c), var(--c)) bottom right;
+  background-size: var(--b) var(--w), var(--w) var(--b);
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+}
