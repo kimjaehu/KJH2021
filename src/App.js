@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 import Canvas from "../src/canvas/Canvas";
@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Work from "./pages/Work";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+import NotFound from "./pages/NotFound";
 import "./App.css";
 
 function App() {
@@ -28,16 +29,19 @@ function App() {
 
   return !isLoading ? (
     <div className="body">
-      <Canvas />
       <Mouse />
       <Header />
       <AnimatePresence initial={false} exitBeforeEnter>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/work" component={Work} />
-          <Route path="/contact" component={Contact} />
-        </Switch>
+        <Canvas />
+        <Router basename="/">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/work" component={Work} />
+            <Route path="/contact" component={Contact} />
+            <Route path="*" component={NotFound} />
+          </Switch>
+        </Router>
       </AnimatePresence>
       <Footer />
     </div>
