@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/KJH2021/static/css/main.85290a86.chunk.css",
-    "main.js": "/KJH2021/static/js/main.9f0b7cbc.chunk.js",
-    "main.js.map": "/KJH2021/static/js/main.9f0b7cbc.chunk.js.map",
+    "main.css": "/KJH2021/static/css/main.1018f6b6.chunk.css",
+    "main.js": "/KJH2021/static/js/main.7fb1287c.chunk.js",
+    "main.js.map": "/KJH2021/static/js/main.7fb1287c.chunk.js.map",
     "runtime-main.js": "/KJH2021/static/js/runtime-main.0f3dc418.js",
     "runtime-main.js.map": "/KJH2021/static/js/runtime-main.0f3dc418.js.map",
-    "static/js/2.328602bf.chunk.js": "/KJH2021/static/js/2.328602bf.chunk.js",
-    "static/js/2.328602bf.chunk.js.map": "/KJH2021/static/js/2.328602bf.chunk.js.map",
+    "static/js/2.e956a49c.chunk.js": "/KJH2021/static/js/2.e956a49c.chunk.js",
+    "static/js/2.e956a49c.chunk.js.map": "/KJH2021/static/js/2.e956a49c.chunk.js.map",
     "index.html": "/KJH2021/index.html",
-    "static/css/main.85290a86.chunk.css.map": "/KJH2021/static/css/main.85290a86.chunk.css.map",
-    "static/js/2.328602bf.chunk.js.LICENSE.txt": "/KJH2021/static/js/2.328602bf.chunk.js.LICENSE.txt",
+    "static/css/main.1018f6b6.chunk.css.map": "/KJH2021/static/css/main.1018f6b6.chunk.css.map",
+    "static/js/2.e956a49c.chunk.js.LICENSE.txt": "/KJH2021/static/js/2.e956a49c.chunk.js.LICENSE.txt",
     "static/media/earth.9b0aac34.png": "/KJH2021/static/media/earth.9b0aac34.png",
     "static/media/lunar_rover.f1b01168.png": "/KJH2021/static/media/lunar_rover.f1b01168.png",
     "static/media/rocket.848eea9c.png": "/KJH2021/static/media/rocket.848eea9c.png",
     "static/media/space_station.e111b50a.png": "/KJH2021/static/media/space_station.e111b50a.png",
+    "static/media/404.css": "/KJH2021/static/media/starcraft.6da3a6bc.jpg",
     "static/media/ufo.f11aed49.png": "/KJH2021/static/media/ufo.f11aed49.png"
   },
   "entrypoints": [
     "static/js/runtime-main.0f3dc418.js",
-    "static/js/2.328602bf.chunk.js",
-    "static/css/main.85290a86.chunk.css",
-    "static/js/main.9f0b7cbc.chunk.js"
+    "static/js/2.e956a49c.chunk.js",
+    "static/css/main.1018f6b6.chunk.css",
+    "static/js/main.7fb1287c.chunk.js"
   ]
 }
