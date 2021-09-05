@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 import CreateSpans from "../utils/CreateSpans";
 import useTextStyleChange from "../utils/useTextStyleChange";
 import "../styles/work.css";
@@ -5,7 +7,12 @@ import "../styles/work.css";
 const Contact = () => {
   const randomNumbers = useTextStyleChange(".content__secondary-header");
   return (
-    <div className="main">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="main"
+    >
       <div className="header-container">
         <h1 className="content__primary-header">
           Let us connect<span className="content__name">!</span>
@@ -27,7 +34,7 @@ const Contact = () => {
           /email
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

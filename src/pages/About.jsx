@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import { motion } from "framer-motion";
 import CreateSpans from "../utils/CreateSpans";
 import useTextStyleChange from "../utils/useTextStyleChange";
 
@@ -8,7 +8,12 @@ import "../styles/about.css";
 const About = () => {
   const randomNumbers = useTextStyleChange(".content__secondary-header");
   return (
-    <div className="main">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="main"
+    >
       <div className="header-container">
         <h1 className="content__primary-header">
           About me<span className="content__name">?</span>
@@ -83,7 +88,7 @@ const About = () => {
           /Work
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

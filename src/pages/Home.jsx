@@ -9,7 +9,12 @@ const Home = () => {
   const randomNumbers = useTextStyleChange(".content__secondary-header");
 
   return (
-    <div className="main">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="main"
+    >
       <div className="header-container">
         <h1 className="content__primary-header">
           Hi, my name is Jay
@@ -40,7 +45,7 @@ const Home = () => {
             randomNumbers={randomNumbers}
           />
         </h2>
-        <Link className="link" to="/about">
+        <Link className="link" to="/work">
           /Work
         </Link>
       </div>
@@ -55,7 +60,7 @@ const Home = () => {
           /Contact
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

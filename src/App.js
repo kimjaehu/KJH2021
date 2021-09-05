@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
+import ScrollToTop from "./utils/ScrollToTop";
 import Canvas from "../src/canvas/Canvas";
 import Mouse from "./components/Mouse";
 import Header from "./components/Header";
@@ -17,7 +18,9 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   const handleLoading = () => {
-    setIsLoading(false);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
   };
 
   useEffect(() => {
@@ -25,28 +28,29 @@ function App() {
     return () => {
       window.removeEventListener("load", handleLoading);
     };
-  }, [isLoading]);
+  }, []);
 
-  return !isLoading ? (
+  const location = useLocation();
+
+  if (isLoading) return <div className="loader">Loading...</div>;
+
+  return (
     <div className="body">
+      <ScrollToTop />
       <Mouse />
       <Header />
-      <AnimatePresence initial={false} exitBeforeEnter>
-        <Canvas />
-        <Router basename="/">
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/work" component={Work} />
-            <Route path="/contact" component={Contact} />
-            <Route path="*" component={NotFound} />
-          </Switch>
-        </Router>
+      <Canvas />
+      <AnimatePresence exitBeforeEnter>
+        <Switch location={location} key={location.pathname}>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/work" component={Work} />
+          <Route path="/contact" component={Contact} />
+          <Route path="*" component={NotFound} />
+        </Switch>
       </AnimatePresence>
       <Footer />
     </div>
-  ) : (
-    <div className="loader">Loading...</div>
   );
 }
 

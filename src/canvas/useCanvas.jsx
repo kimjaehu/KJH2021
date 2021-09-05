@@ -32,10 +32,10 @@ const useCanvas = () => {
       this.ctx = this.canvas.getContext("2d");
       this.pixelRatio = window.devicePixelRatio > 1 ? 2 : 1;
 
-      this.planetsProp = { maxPlanets: 4 };
+      this.planetsProp = { maxPlanets: 8 };
       this.planets = [];
 
-      this.soundwavesProp = { maxSoundwaves: 5 };
+      this.soundwavesProp = { maxSoundwaves: 6 };
       this.soundwaves = [];
 
       this.soundwavesOnScroll = [];
@@ -45,7 +45,7 @@ const useCanvas = () => {
       this.floats = [];
 
       this.earthProp = {
-        radius: 300,
+        radius: 400,
       };
       this.earth = new Earth(this.earthProp.radius);
       this.eye = new Eye();
@@ -175,8 +175,8 @@ const useCanvas = () => {
       for (let i = this.soundwaves.length - 1; i >= 0; i--) {
         const soundwave = this.soundwaves[i];
         if (
-          soundwave.radius > this.stageWidth &&
-          soundwave.radius > this.stageHeight
+          soundwave.radius > this.stageWidth * 0.75 &&
+          soundwave.radius > this.stageHeight * 0.75
         ) {
           this.soundwaves.splice(i, 1);
         } else {
@@ -197,8 +197,11 @@ const useCanvas = () => {
     }
 
     onMove(e) {
-      let x = Math.floor(Math.random() * this.stageWidth);
-      let y = Math.floor(Math.random() * this.stageHeight);
+      let mouseX = e.pageX - this.canvas.offsetLeft;
+      let mouseY = e.pageY - this.canvas.offsetTop;
+
+      let posX = Math.floor(Math.random() * this.stageWidth);
+      let posY = Math.floor(Math.random() * this.stageHeight);
 
       let starOuterRadius = Math.floor(
         Math.floor(
@@ -211,7 +214,16 @@ const useCanvas = () => {
       if (this.stars.length >= this.starProp.maxNumStars) {
         this.stars.splice(0, 1);
       } else {
-        this.stars.push(new Star(x, y, 8, starOuterRadius, starInnerRadius));
+        this.stars.push(
+          new Star(posX, posY, 8, starOuterRadius, starInnerRadius)
+        );
+      }
+
+      console.log(this.planets);
+
+      for (let i = 0; i < this.planets.length; i++) {
+        const planet = this.planets[i];
+        planet.animate(mouseX, mouseY, 0.05);
       }
     }
 
@@ -219,7 +231,7 @@ const useCanvas = () => {
       if (this.soundwaves && this.soundwaves.length > 0) {
         for (let i = 0; i < this.soundwaves.length; i++) {
           const soundwave = this.soundwaves[i];
-          soundwave.soundwaveWidth = 300;
+          soundwave.onTouch();
         }
       }
     }

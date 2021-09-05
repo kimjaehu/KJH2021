@@ -3,6 +3,8 @@ import EarthImage from "../assets/earth.png";
 export class Earth {
   constructor(radius) {
     this.radius = radius;
+    this.minRadius = radius;
+
     this.img = new Image();
 
     this.img.onload = () => {
@@ -30,7 +32,7 @@ export class Earth {
   resize(stageWidth, stageHeight) {
     this.stageWidth = stageWidth;
     this.stageHeight = stageHeight;
-    this.radius = Math.min(this.stageWidth * 0.4, this.radius);
+    this.minRadius = Math.min(this.stageWidth * 0.4, this.radius);
   }
 
   draw(ctx, t) {
@@ -58,10 +60,10 @@ export class Earth {
       0,
       this.imgWidth,
       this.imgHeight,
-      this.stageWidth * 0.5 - this.imgWidth / 2,
-      this.stageHeight * 0.7 - this.imgHeight / 2,
-      this.earthWidth,
-      this.earthHeight
+      this.stageWidth * 0.5 - this.minRadius / 2,
+      this.stageHeight * 0.7 - this.minRadius / 2,
+      this.minRadius,
+      this.minRadius
     );
   }
 }

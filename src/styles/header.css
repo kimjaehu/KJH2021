@@ -50,6 +50,7 @@
   outline: none;
   animation-duration: 300ms;
   animation-timing-function: ease;
+  padding: 0;
 }
 
 .header__button:hover {

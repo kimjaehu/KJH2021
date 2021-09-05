@@ -1,8 +1,8 @@
 export class Soundwave {
   constructor(radius, stageWidth, stageHeight, color) {
-    this.radius = radius;
-    this.speed = Math.random() * 10;
-    this.acceleration = 0.05;
+    this.radius = radius * 0.75;
+    this.speed = Math.random() * 20;
+    this.acceleration = 0.075;
     this.accelerationSpeed = 0;
     this.opacity = 1;
 
@@ -11,13 +11,13 @@ export class Soundwave {
     this.x = this.stageWidth * 0.5;
     this.y = this.stageHeight * 0.7;
 
-    this.soundwaveWidth = 1;
+    this.soundwaveWidth = 5;
 
     this.r = color.r;
     this.g = color.g;
     this.b = color.b;
 
-    this.total = 20;
+    this.total = 50;
     this.gap = 1 / this.total;
     this.originPos = [];
     this.pos = [];
@@ -62,12 +62,17 @@ export class Soundwave {
     ctx.stroke();
   }
 
+  onTouch() {
+    this.soundwaveWidth = 200;
+    this.acceleration = 2;
+  }
+
   updatePoints() {
     for (let i = 1; i < this.total; i++) {
       const pos = this.originPos[i];
       this.pos[i] = {
-        x: pos.x + this.ranInt(20),
-        y: pos.y + this.ranInt(20),
+        x: pos.x + this.ranInt(50),
+        y: pos.y + this.ranInt(50),
       };
     }
   }
