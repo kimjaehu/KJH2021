@@ -3,7 +3,7 @@ import { Route, Switch, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 import ScrollToTop from "./utils/ScrollToTop";
-import Canvas from "../src/canvas/Canvas";
+// import Canvas from "../src/canvas/Canvas";
 import Mouse from "./components/Mouse";
 import Header from "./components/Header";
 import Home from "./pages/Home";
@@ -39,7 +39,7 @@ function App() {
       <ScrollToTop />
       <Mouse />
       <Header />
-      <Canvas />
+      {/* <Canvas /> */}
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/" component={Home} />

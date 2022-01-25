@@ -8,8 +8,6 @@ import { Earth } from "./elements/Earth";
 import { Soundwave } from "./elements/Soundwave";
 import { FloatController } from "./elements/float/FloatController";
 import { Rocket } from "./elements/Rocket";
-// todo
-// planet
 
 const useCanvas = () => {
   const COLORS = [
@@ -246,7 +244,7 @@ const useCanvas = () => {
     return () => {
       newCanvas();
     };
-  }, []);
+  });
 
   return canvasRef;
 };
